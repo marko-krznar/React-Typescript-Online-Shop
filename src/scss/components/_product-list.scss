@@ -1,0 +1,20 @@
+.productList {
+    &.productList--col-4 {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .product__item {
+        width: calc(25% - 12px);
+        margin: 0 16px 24px 0;
+        overflow: hidden;
+        box-sizing: border-box;
+        &:nth-child(4n) {
+            margin: 0 0 24px 0;
+        }
+        img {
+            max-width: 100%;
+        }
+    }
+}

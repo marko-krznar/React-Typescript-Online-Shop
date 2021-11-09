@@ -1,12 +1,21 @@
-import React from 'react'
+import React from 'react';
 
-function products() {
+export default function Products(props) {
+
+    const { products } = props;
+
+    const productItem = products.map((product, index) =>
+        <div className='product__item' key={index}>
+            <div><img src={product.image} alt={product.name} /></div>
+            <h2>{product.name}</h2>
+            <p>{product.price}</p>
+            <button>Add to Cart</button>
+        </div>
+    );
 
     return (
-        <div>
-            <h2>Products</h2>
+        <div className='productList productList--col-4'>
+            {productItem}
         </div>
     )
 }
-
-export default products
