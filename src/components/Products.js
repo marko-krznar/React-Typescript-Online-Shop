@@ -38,33 +38,39 @@ export default function Products(props) {
         }
     }
 
+    // Display products
     const productItem = products.map((product, index) =>
         <div className='product__item' key={index}>
             <div><img src={product.image} alt={product.name} /></div>
-            <h2>{product.name}</h2>
-            <p>{product.price}</p>
-            <button onClick={() => addToCartHandler(product)}>Add to Cart</button>
+            <div className="info p-3">
+                <h2>{product.name}</h2>
+                <p>{product.price} EUR</p>
+                <div className="text-center">
+                    <button className='btn btn-primary mb-2' onClick={() => addToCartHandler(product)}>Add to Cart</button>
+                </div>
+            </div>
         </div>
     );
 
     return (
-        <div>
-            <div className='productList productList--col-4'>
+        <div className='d-flex flex-wrap align-items-start mt-5'>
+            <div className='productList productList--col-2 pr-4'>
                 {productItem}
             </div>
-            <div>
+            <div className='sidebar p-3'>
                 <h2>Cart</h2>
                 {/* Ako nema ništa u cart-u ispiši da je empty */}
                 <p>{cartItems.length === 0 && <span>Cart is empty</span>}</p>
                 {cartItems.map(
                     (item, index) => (
-                        <div key={index}>
+                        <div className='d-flex align-items-center
+                        ' key={index}>
                             {/* <img src={item.image} alt={item.name}/> */}
                             <span>{item.name}</span>
-                            <span>{item.price} kn</span>
-                            <button onClick={() => addToCartHandler(item)}>+</button>
+                            <button className='btn btn-light' onClick={() => decreaseQtyHandler(item)}>-</button>
                             <span>{item.qty}</span>
-                            <button onClick={() => decreaseQtyHandler(item)}>-</button>
+                            <button className='btn btn-light' onClick={() => addToCartHandler(item)}>+</button>
+                            <span>{item.price} EUR</span>
                         </div>
                     )
                 )}

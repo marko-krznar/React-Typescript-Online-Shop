@@ -9,9 +9,9 @@ function App() {
 
   return (
     <div className='pg-cart'>
-      <main>
-        <h1>BatM's</h1>
-        <p>This is a test site made for learning</p>
+      <main className='p-4'>
+        <h1 className='text-center'>BatM's</h1>
+        <p className='text-center'>This is a test site made for learning</p>
         <Products 
           products = {products}
         />
