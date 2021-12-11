@@ -1,11 +1,24 @@
 .sidebar {
     width: 100%;
-    max-width: 300px;
+    max-width: 360px;
     background: #fff;
     border-radius: 1rem;
     overflow: hidden;
+    &.sidebar--cart {
+        .col--remove {
+            top: -.5rem;
+            right: -.7rem;
+            opacity: .4;
+        }
+        .qty span {
+            min-width: 2rem;
+        }
+    }
 }
 .productList {
     width: 100%;
-    max-width: calc(100% - 300px);
+    max-width: calc(100% - 360px);
+}
+img {
+    width: 100%;
 }

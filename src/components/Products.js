@@ -52,28 +52,76 @@ export default function Products(props) {
         </div>
     );
 
+    // Remove from cart
+    const removeFromCartHandler = (item) => {
+
+        const existProduct = cartItems.find(x => x.id === item.id);
+
+        if (existProduct.qty >= 1) {
+            setcartItems(cartItems.filter((x) => x.id !== item.id));
+        }
+
+    }
+
+    // Display total price 
+    const totalPrice = cartItems.reduce((currentPrice, item) => {
+        return (item.price * item.qty) + currentPrice;
+    }, 0);
+
     return (
         <div className='d-flex flex-wrap align-items-start mt-5'>
             <div className='productList productList--col-2 pr-4'>
                 {productItem}
             </div>
-            <div className='sidebar p-3'>
-                <h2>Cart</h2>
-                {/* Ako nema ništa u cart-u ispiši da je empty */}
-                <p>{cartItems.length === 0 && <span>Cart is empty</span>}</p>
+            <div className='sidebar sidebar--cart p-4 pt-5 pb-5'>
+                <h2 className='mb-4'>Cart</h2>
+                {/* Display Carty is empty */}
+                {cartItems.length === 0 && <span>Cart is empty</span>}
+                {/* Display product info */}
                 {cartItems.map(
                     (item, index) => (
-                        <div className='d-flex align-items-center
-                        ' key={index}>
-                            {/* <img src={item.image} alt={item.name}/> */}
-                            <span>{item.name}</span>
-                            <button className='btn btn-light' onClick={() => decreaseQtyHandler(item)}>-</button>
-                            <span>{item.qty}</span>
-                            <button className='btn btn-light' onClick={() => addToCartHandler(item)}>+</button>
-                            <span>{item.price} EUR</span>
+                        <div className='container' key={index}>
+                            <div className='row align-items-center mb-4 position-relative pl-2 pr-2'>
+
+                                {/* <img src={item.image} alt={item.name}/> */}
+                                <div className="col-sm p-0">
+                                    <span>{item.name}</span>
+                                </div>
+                                
+                                <div className="qty col-sm p-0">
+                                    <button className='btn btn-light btn-sm' onClick={() => decreaseQtyHandler(item)}>-</button>
+                                    <span className='text-center d-inline-block'>{item.qty}</span>
+                                    <button className='btn btn-light btn-sm' onClick={() => addToCartHandler(item)}>+</button>
+                                </div>
+
+                                <div className="col-sm p-0 text-right">
+                                    <span>{item.price} EUR</span>
+                                </div>
+
+                                <i onClick={() => removeFromCartHandler(item)} className="bi bi-x-circle position-absolute col--remove"></i>
+                                
+                            </div>
                         </div>
                     )
                 )}
+                {/* Display cart total if product is added to cart */}
+                {cartItems.length > 0 && 
+                <div className="cart--total container border-top pt-4 mt-4">
+
+                    <div className="row font-weight-bold pl-2 pr-2">
+
+                        <div className="col-sm p-0">
+                            <span>Total</span>
+                        </div>
+
+                        <div className="col-sm p-0 text-right">
+                            <span>{totalPrice} EUR</span>
+                        </div>
+
+                    </div>
+
+                </div>}
+                
             </div>
         </div>
         
