@@ -1,0 +1,11 @@
+.sidebar {
+    width: 100%;
+    max-width: 300px;
+    background: #fff;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+.productList {
+    width: 100%;
+    max-width: calc(100% - 300px);
+}
