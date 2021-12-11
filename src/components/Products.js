@@ -52,6 +52,11 @@ export default function Products(props) {
         </div>
     );
 
+    // Display total price 
+    const totalPrice = cartItems.reduce((currentPrice, item) => {
+        return (item.price * item.qty) + currentPrice;
+    }, 0);
+
     return (
         <div className='d-flex flex-wrap align-items-start mt-5'>
             <div className='productList productList--col-2 pr-4'>
@@ -74,6 +79,12 @@ export default function Products(props) {
                         </div>
                     )
                 )}
+                {cartItems.length > 0 && 
+                <div className="cart--total">
+                    <span>Total</span>
+                    <span>{totalPrice} EUR</span>
+                </div>}
+                
             </div>
         </div>
         
