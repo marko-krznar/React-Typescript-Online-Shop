@@ -2,7 +2,6 @@
 import './scss/style.scss';
 import data from "./components/data.js";
 import Products from './components/Products.js';
-// import Cart from './components/Cart.js';
 
 function App() {
 
@@ -11,13 +10,11 @@ function App() {
   return (
     <div className='pg-cart'>
       <main>
-        <h1>Cart page</h1>
+        <h1>BatM's</h1>
+        <p>This is a test site made for learning</p>
         <Products 
           products = {products}
         />
-        {/* <Cart 
-          cartItems = {cartItems}
-        /> */}
       </main>
     </div>
   )
