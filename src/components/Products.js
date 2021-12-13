@@ -6,6 +6,8 @@ export default function Products(props) {
 
     const [cartItems, setcartItems] = useState([]);
 
+
+    // Add to Cart
     const addToCartHandler = (product) => {
         // Provjera dal proizvod postoji u state-u cartItems, provjera se radi prema id-u proizvoda
         const existProduct = cartItems.find(x => x.id === product.id);
@@ -68,6 +70,30 @@ export default function Products(props) {
         return (item.price * item.qty) + currentPrice;
     }, 0);
 
+    // Coupon state
+    const [coupon, setCoupon] = useState({couponCode: 'PROMO30', inputCode: '', disountPrice: '', newPrice:'', isActive: ''});
+    
+    const handleChange = (e) => {
+        // Change state of coupon and check if there is one in state
+        setCoupon({...coupon, inputCode: e.target.value});
+    }
+    const handleSubmit = (e) => {
+
+        e.preventDefault();
+
+        const inputTextTrim = coupon.inputCode.trim();
+        if (inputTextTrim.length < 7) {
+            return;
+        }
+
+        if (inputTextTrim === coupon.couponCode) {
+            setCoupon({...coupon, disountPrice: (totalPrice * 0.30).toFixed(0), newPrice: (totalPrice * 0.70).toFixed(0), isActive: true});
+        } else {
+            setCoupon({...coupon, isActive: false});
+        }
+        
+    }
+
     return (
         <div className='d-flex flex-wrap align-items-start mt-5'>
             <div className='productList productList--col-2 pr-4'>
@@ -75,8 +101,10 @@ export default function Products(props) {
             </div>
             <div className='sidebar sidebar--cart p-4 pt-5 pb-5'>
                 <h2 className='mb-4'>Cart</h2>
+
                 {/* Display Carty is empty */}
                 {cartItems.length === 0 && <span>Cart is empty</span>}
+
                 {/* Display product info */}
                 {cartItems.map(
                     (item, index) => (
@@ -104,23 +132,56 @@ export default function Products(props) {
                         </div>
                     )
                 )}
+
                 {/* Display cart total if product is added to cart */}
                 {cartItems.length > 0 && 
                 <div className="cart--total container border-top pt-4 mt-4">
-
                     <div className="row font-weight-bold pl-2 pr-2">
-
                         <div className="col-sm p-0">
                             <span>Total</span>
                         </div>
-
                         <div className="col-sm p-0 text-right">
                             <span>{totalPrice} EUR</span>
                         </div>
-
                     </div>
-
                 </div>}
+
+                {/* Display coupon */}
+                {coupon.isActive === true && cartItems.length > 0 &&
+                    <div className="cart--coupon container mt-2 mb-2">
+                        <div className="row font-weight-bold pl-2 pr-2">
+                            <div className="col-sm p-0">
+                                <span>Coupon</span>
+                            </div>
+                            <div className="col-sm p-0 text-right">
+                                <span>{coupon.disountPrice} EUR</span>
+                            </div>
+                        </div>
+                        <div className="row font-weight-bold pl-2 pr-2 mt-2">
+                            <div className="col-sm p-0">
+                                <span>New total</span>
+                            </div>
+                            <div className="col-sm p-0 text-right">
+                                <span>{coupon.newPrice} EUR</span>
+                            </div>
+                        </div>
+                    </div>
+                }
+                {coupon.isActive === false && cartItems.length > 0 &&
+                    <div className="cart--coupon container mt-2">
+                        <div className="row pl-2 pr-2">
+                            <span>Incorrect coupon</span>
+                        </div>
+                    </div>
+                }
+
+                {/* Display message if the code is wrong */}
+                <div className="coupon mt-4">
+                    <form onSubmit={(e) => handleSubmit(e)}>
+                        <input type="text" value={coupon.inputCode} onChange={(e) => handleChange(e)} />
+                        <button className='btn btn-primary'>Use coupon</button>
+                    </form>
+                </div>
                 
             </div>
         </div>
