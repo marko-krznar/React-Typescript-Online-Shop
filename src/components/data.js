@@ -1,28 +1,49 @@
+import plant from '../images/plant.jpg';
+import glasses from '../images/glasses.jpg';
+import bag from '../images/bag.jpg';
+import watch from '../images/watch.jpg';
+
 const data = {
     products: [
         {
             id: 1,
-            name: 'Macbook',
+            name: 'Awesome Plant',
             price: 1400,
-            image: 'https://dummyimage.com/600x400/000/fff',
+            image: plant,
+            alt: 'Plant',
+            imgAuthor: 'Galina N',
+            imgAuthorLink: 'https://unsplash.com/@galina88?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
+            imgSource: 'https://unsplash.com/s/photos/product?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
         },
         {
             id: 2,
-            name: 'Dell',
+            name: 'Smartest Watch',
             price: 1200,
-            image: 'https://dummyimage.com/600x400/000/fff',
+            image: watch,
+            alt: 'Watch',
+            imgAuthor: 'Rachit Tank',
+            imgAuthorLink: 'https://unsplash.com/@rachitank?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
+            imgSource: 'https://unsplash.com/s/photos/product?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
         },
         {
             id: 3,
-            name: 'HP',
+            name: 'Coolest Sunglasses',
             price: 900,
-            image: 'https://dummyimage.com/600x400/000/fff',
+            image: glasses,
+            alt: 'Sunglasses',
+            imgAuthor: 'Charles Deluvio',
+            imgAuthorLink: 'https://unsplash.com/@charlesdeluvio?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
+            imgSource: 'https://unsplash.com/s/photos/product?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
         },
         {
             id: 4,
-            name: 'Xiaomi',
+            name: 'Best Grocery bag',
             price: 1000,
-            image: 'https://dummyimage.com/600x400/000/fff',
+            image: bag,
+            alt: 'Grocery bag',
+            imgAuthor: 'Kelly Sikkema',
+            imgAuthorLink: 'https://unsplash.com/@kellysikkema?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
+            imgSource: 'https://unsplash.com/s/photos/product?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
         }
     ]
 }
