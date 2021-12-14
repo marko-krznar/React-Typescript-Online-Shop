@@ -41,7 +41,10 @@ export default function Products(props) {
     // Display products
     const productItem = products.map((product, index) =>
         <div className='product__item' key={index}>
-            <div><img src={product.image} alt={product.name} /></div>
+            <div className='position-relative'>
+                <img src={product.image} alt={product.name} />
+                <div className='position-absolute block--photo-author'>Photo by <a href={product.imgAuthorLink}>{product.imgAuthor}</a> on <a href={product.imgSource}>Unsplash</a></div>
+            </div>
             <div className="info p-3">
                 <h2>{product.name}</h2>
                 <p>{product.price} EUR</p>
