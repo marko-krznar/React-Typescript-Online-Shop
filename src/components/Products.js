@@ -6,7 +6,6 @@ export default function Products(props) {
 
     const [cartItems, setcartItems] = useState([]);
 
-
     // Add to Cart
     const addToCartHandler = (product) => {
         // Provjera dal proizvod postoji u state-u cartItems, provjera se radi prema id-u proizvoda
@@ -47,11 +46,16 @@ export default function Products(props) {
                 <img src={product.image} alt={product.name} />
                 <div className='position-absolute block--photo-author'>Photo by <a href={product.imgAuthorLink}>{product.imgAuthor}</a> on <a href={product.imgSource}>Unsplash</a></div>
             </div>
-            <div className="info p-3">
+            <div className="info p-4">
                 <h2>{product.name}</h2>
-                <p>{product.price} EUR</p>
-                <div className="text-center">
-                    <button className='btn btn-primary mb-2' onClick={() => addToCartHandler(product)}>Add to Cart</button>
+                <p>{product.desc}</p>
+                <div className='d-flex justify-content-between align-items-center'>
+                    <div className='block--price'>
+                        <span>{product.price} EUR</span>
+                    </div>
+                    <div className="block--add-to-cart">
+                        <button className='btn btn-primary mb-2' onClick={() => addToCartHandler(product)}>Add to Cart</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -99,7 +103,7 @@ export default function Products(props) {
    
     return (
         <div className='d-flex flex-wrap align-items-start mt-5'>
-            <div className='productList productList--col-2 pr-4'>
+            <div className='productList productList--col-4 pr-4'>
                 {productItem}
             </div>
             <div className='sidebar sidebar--cart p-4 pt-5 pb-5'>
