@@ -1,18 +1,19 @@
 .productList {
-    &.productList--col-2 {
+    &.productList--col-4 {
         display: flex;
         flex-flow: row wrap;
         align-items: flex-start;
         justify-content: flex-start;
         .product__item {
-            width: calc(50% - 12px);
+            width: calc(25% - 12px);
             margin: 0 16px 24px 0;
             overflow: hidden;
             box-sizing: border-box;
             background: #fff;
             border-radius: 1rem;
             overflow: hidden;
-            &:nth-child(2n) {
+            box-shadow: 0 0 1rem rgba(255, 255, 255, .6);
+            &:nth-child(4n) {
                 margin: 0 0 24px 0;
             }
         }
@@ -24,5 +25,13 @@
         bottom: .5rem;
         right: .5rem;
         font-size: .75rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+        line-height: 1.4;
+        margin: 0.5rem 0 1rem;
+    }
+    p {
+        opacity: .6;
     }
 }
