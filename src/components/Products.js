@@ -6,11 +6,11 @@ export default function Products(props) {
 
     const [cartItems, setcartItems] = useState([]);
 
-    // Add to Cart
+    // Add to Cart and increase if product is already in cart
     const addToCartHandler = (product) => {
-        // Provjera dal proizvod postoji u state-u cartItems, provjera se radi prema id-u proizvoda
+        // Checks if product is in the cart
         const existProduct = cartItems.find(x => x.id === product.id);
-        // Ako postoji samo se mijenja količina dok ostalo ostaje isto
+        // If exist change only qty
         if (existProduct) {
             setcartItems(
                 cartItems.map((x) => 
@@ -23,7 +23,7 @@ export default function Products(props) {
         }
     }
 
-    // Mogućnost za smanjivanje proizvoda u cart-u
+    // Decrease qty
     const decreaseQtyHandler = (item) => {
         const existProduct = cartItems.find(x => x.id === item.id);
         if (existProduct) { 
@@ -79,7 +79,6 @@ export default function Products(props) {
 
     // Coupon state
     const [coupon, setCoupon] = useState({couponCode: 'PROMO30', inputCode: '', disountPrice: '', newPrice:'', isActive: ''});
-    
     const handleChange = (e) => {
         // Change state of coupon and check if there is one in state
         setCoupon({...coupon, inputCode: e.target.value});
@@ -192,6 +191,5 @@ export default function Products(props) {
                 
             </div>
         </div>
-        
     )
 }
