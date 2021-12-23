@@ -10,8 +10,20 @@
             right: -.7rem;
             opacity: .4;
         }
-        .qty span {
-            min-width: 2rem;
+        .cart__item--qty {
+            max-width: 88px;
+            width: 100%;
+            span {
+                min-width: 2rem;
+            }
+        }
+        .cart__item--price {
+            max-width: 72px;
+            width: 100%;
+        }
+        .cart__item--name {
+            width: 100%;
+            max-width: calc(100% - 160px);
         }
     }
 }
@@ -21,4 +33,73 @@
 }
 img {
     width: 100%;
+}
+
+// Resolution laptop 1680px
+@media (max-width: 1680px) {
+    .productList {
+        max-width: calc(100% - 440px);
+        &.productList--col-4 {
+            .product__item {
+                width: calc(50% - 12px);
+                margin: 0 0 24px;
+                &:nth-child(2n) {
+                    margin-left: 24px;
+                }
+            }
+        }
+    }
+    .sidebar.sidebar--cart {
+        max-width: 440px;
+        .cart__item--qty {
+            max-width: 100px;
+        }
+        .cart__item--price {
+            max-width: 88px;
+        }
+        .cart__item--name {
+            max-width: calc(100% - 188px);
+        }
+        form {
+            input {
+                width: 100%;
+                max-width: calc(100% - 124px);
+            }
+        }
+    }
+}
+
+// Resolution laptop 1200px
+@media (max-width: 1200px) {
+    .productList {
+        max-width: 100%;
+        &.pr-4 {
+            padding-right: 0 !important;
+        }
+    }
+    .sidebar.sidebar--cart {
+        max-width: 100%;
+        margin-top: 2rem;
+    }
+}
+
+// Resolution mobile 576px
+@media (max-width: 576px) {
+    .productList.productList--col-4 .product__item {
+        width: 100%;
+        margin: 0 0 24px;
+        &:nth-child(2n) {
+            margin-left: 0;
+        }
+    }
+    .sidebar.sidebar--cart {
+        .cart__item--name {
+            padding-right: 12px;
+        }
+        .cart--total, .cart--coupon {
+            .col-sm {
+                width: 50%;
+            }
+        }
+    }
 }

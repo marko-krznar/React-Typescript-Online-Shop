@@ -13,3 +13,10 @@ body {
         overflow: hidden;
     }
 }
+
+// Resolution mobile 576px
+@media (max-width: 576px) {
+    body > div {
+        margin: 0;
+    }
+}

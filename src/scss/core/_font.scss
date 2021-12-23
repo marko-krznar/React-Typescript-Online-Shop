@@ -11,3 +11,13 @@ h1 {
     color: rgba(255, 255, 255, .7);
     font-size: 1.25rem;
 }
+
+// Resolution mobile 576px
+@media (max-width: 576px) {
+    .display-1 {
+        font-size: 4rem;
+    }
+    .text--hd-desc {
+        font-size: 1rem;
+    }
+}
