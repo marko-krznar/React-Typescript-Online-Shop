@@ -6,6 +6,8 @@ export default function Products(props) {
 
     const [cartItems, setcartItems] = useState([]);
 
+    const [coupon, setCoupon] = useState({couponCode: 'PROMO30', inputCode: '', disountPrice: '', newPrice:'', isActive: ''});
+
     // Add to Cart and increase if product is already in cart
     const addToCartHandler = (product) => {
         // Checks if product is in the cart
@@ -21,6 +23,8 @@ export default function Products(props) {
             // Dodavanje proizvoda u cart
             setcartItems([...cartItems, {...product, qty: 1}]);
         }
+        // Remove coupon
+        setCoupon({couponCode: 'PROMO30', inputCode: '', disountPrice: '', newPrice:'', isActive: ''});
     }
 
     // Decrease qty
@@ -33,10 +37,12 @@ export default function Products(props) {
                 )
             );
         }
-    // Ako postojeći proizvod ima količinu 1 i ako korisnik klikne na gumb, funkcija mora maknuti proizvod iz state-a cart-a
+        // Ako postojeći proizvod ima količinu 1 i ako korisnik klikne na gumb, funkcija mora maknuti proizvod iz state-a cart-a
         if (existProduct.qty === 1) {
             setcartItems(cartItems.filter((x) => x.id !== item.id));
         }
+        // Remove coupon
+        setCoupon({couponCode: 'PROMO30', inputCode: '', disountPrice: '', newPrice:'', isActive: ''});
     }
 
     // Display products
@@ -70,6 +76,9 @@ export default function Products(props) {
             setcartItems(cartItems.filter((x) => x.id !== item.id));
         }
 
+        // Remove coupon
+        setCoupon({couponCode: 'PROMO30', inputCode: '', disountPrice: '', newPrice:'', isActive: ''});
+
     }
 
     // Display total price 
@@ -77,10 +86,8 @@ export default function Products(props) {
         return (item.price * item.qty) + currentPrice;
     }, 0);
 
-    // Coupon state
-    const [coupon, setCoupon] = useState({couponCode: 'PROMO30', inputCode: '', disountPrice: '', newPrice:'', isActive: ''});
+    // Change state of coupon and check if there is one in state
     const handleChange = (e) => {
-        // Change state of coupon and check if there is one in state
         setCoupon({...coupon, inputCode: e.target.value});
     }
     const handleSubmit = (e) => {
