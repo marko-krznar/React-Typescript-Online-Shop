@@ -122,20 +122,20 @@ export default function Products(props) {
                 {cartItems.map(
                     (item, index) => (
                         <div className='container' key={index}>
-                            <div className='row align-items-center mb-4 position-relative pl-2 pr-2'>
+                            <div className='cart__item row align-items-center mb-4 position-relative pl-2 pr-2'>
 
                                 {/* <img src={item.image} alt={item.name}/> */}
-                                <div className="col-sm p-0">
+                                <div className="cart__item--name">
                                     <span>{item.name}</span>
                                 </div>
                                 
-                                <div className="qty col-sm p-0">
+                                <div className="cart__item--qty">
                                     <button className='btn btn-light btn-sm' onClick={() => decreaseQtyHandler(item)}>-</button>
                                     <span className='text-center d-inline-block'>{item.qty}</span>
                                     <button className='btn btn-light btn-sm' onClick={() => addToCartHandler(item)}>+</button>
                                 </div>
 
-                                <div className="col-sm p-0 text-right">
+                                <div className="cart__item--price text-right">
                                     <span>{item.price} EUR</span>
                                 </div>
 
