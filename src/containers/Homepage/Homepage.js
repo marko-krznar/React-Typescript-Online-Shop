@@ -1,11 +1,11 @@
 import React from "react";
-import Products from '../../components/Products';
-import data from "../../components/data";
-
+// import Products from '../../components/Products';
+// import data from "../../components/data";
+import CategoryPage from "../Category-page/CategoryPage";
 
 function Homepage() {
 
-    const { products } = data;
+    // const { products } = data;
 
     return (
         <div>
@@ -17,7 +17,8 @@ function Homepage() {
                     This is a test site made for learning. For using coupon
                     write in field PROMO30. It will reduce total for 30%.
                 </p>
-                <Products products={products} />
+                {/* <Products products={products} /> */}
+                <CategoryPage />
             </main>
         </div>
     );
