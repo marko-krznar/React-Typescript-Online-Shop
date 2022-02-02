@@ -1,23 +1,13 @@
-// import React, { useState } from 'react';
-import './scss/style.scss';
-import data from "./components/data.js";
-import Products from './components/Products.js';
+import "./scss/style.scss";
+import Homepage from "./containers/Homepage/Homepage";
 
 function App() {
 
-  const {products} = data;
-
-  return (
-    <div className='pg-cart'>
-      <main className='p-4'>
-        <h1 className='text-center display-1 font-weight-bold'>BatM's</h1>
-        <p className='text-center text--hd-desc'>This is a test site made for learning. For using coupon write in field PROMO30. It will reduce total for 30%.</p>
-        <Products 
-          products = {products}
-        />
-      </main>
-    </div>
-  )
+    return (
+        <div className="page page--homepage">
+            <Homepage />
+        </div>
+    );
 }
 
-export default App
+export default App;
