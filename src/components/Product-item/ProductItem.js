@@ -1,3 +1,5 @@
+import { Route, Routes, Link } from "react-router-dom";
+
 export default function ProductItem({ product }) {
   return (
     <div className="product__item">
@@ -16,7 +18,12 @@ export default function ProductItem({ product }) {
             <span>{product.price} EUR</span>
           </div>
           <div className="block--add-to-cart">
-            <button className="btn btn-primary mb-2">See more</button>
+            <Link
+              to={`/product/${product.slug}`}
+              className="btn btn-primary mb-2"
+            >
+              See more
+            </Link>
           </div>
         </div>
       </div>

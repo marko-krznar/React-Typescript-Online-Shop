@@ -1,0 +1,21 @@
+.page.product {
+  margin-top: 2rem;
+  padding: 1rem 0;
+  .block--img {
+    flex: 1 1 40%;
+  }
+  .block--info {
+    flex: 1 1 60%;
+    padding-left: 2rem;
+  }
+  h2,
+  p {
+    color: #fff;
+  }
+  h2 {
+    text-transform: uppercase;
+  }
+}
+.btn--light {
+  background: #fff;
+}
