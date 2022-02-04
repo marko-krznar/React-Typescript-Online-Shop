@@ -1,5 +1,4 @@
 import React from "react";
-import CategoryPage from "../Category-page/CategoryPage";
 
 function Homepage() {
   return (
