@@ -5,18 +5,21 @@ import Cart from "./components/Cart/Cart";
 import CategoryPage from "./containers/Category-page/CategoryPage";
 import Header from "./containers/Header/Header";
 import ProductPage from "../src/containers/Product-page/ProductPage";
+import { ProductProvider } from "./api/ProductContext";
 
 function App() {
   return (
     <div className="page">
-      <Header />
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path={`/product`} element={<ProductPage />} />
-        <Route path="/products/*" element={<CategoryPage />} />
-        <Route path="/*" element={<Homepage />} />
-      </Routes>
+      <ProductProvider>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path={`/product`} element={<ProductPage />} />
+          <Route path="/products/*" element={<CategoryPage />} />
+          <Route path="/*" element={<Homepage />} />
+        </Routes>
+      </ProductProvider>
     </div>
   );
 }
