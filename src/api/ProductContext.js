@@ -11,7 +11,7 @@ export const ProductProvider = (props) => {
     {
       id: 1,
       name: "Awesome Plant",
-      slug: "awesom e-plant",
+      slug: "awesome-plant",
       price: 1400,
       image: plant,
       alt: "Plant",
