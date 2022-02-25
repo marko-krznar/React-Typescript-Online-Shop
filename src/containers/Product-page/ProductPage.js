@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState, useContext } from "react";
+import { ProductContext } from "../../api/ProductContext";
 import "./style.scss";
 
 export default function ProductPage() {
+  const [products, setProducts] = useContext(ProductContext);
+  console.log(products);
   return (
     <div className="page product d-flex">
+      <h3></h3>
       <div className="block--img">
         <img src="/static/media/plant.a0712536.jpg" alt="Awesome Plant" />
       </div>
