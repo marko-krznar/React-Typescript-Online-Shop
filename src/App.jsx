@@ -4,11 +4,11 @@ import { Route, Routes } from "react-router-dom";
 import Cart from "./containers/Cart/Cart";
 import CategoryPage from "./containers/Category-page/CategoryPage";
 import Header from "./containers/Header/Header";
-import { ProductPage } from "../src/containers/Product-page/ProductPage";
+import { ProductPage } from "./containers/Product-page/ProductPage";
 import { ProductProvider } from "./api/ProductContext";
 import { CartProvider } from "./api/CartContext";
 
-function App() {
+const App = () => {
 	return (
 		<div className="page">
 			<CartProvider>
@@ -28,6 +28,6 @@ function App() {
 			</CartProvider>
 		</div>
 	);
-}
+};
 
 export default App;

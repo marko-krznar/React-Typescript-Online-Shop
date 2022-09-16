@@ -1,0 +1,24 @@
+.menu {
+	padding: 2rem 4rem;
+
+	a {
+		color: $main-c;
+		padding: 0 1.5rem;
+		text-transform: uppercase;
+
+		&:last-child {
+			padding-right: 0;
+		}
+
+		&:hover {
+			color: $main-hightlight;
+		}
+	}
+
+	.menu-logo {
+		flex: 1;
+		font-size: 2rem;
+		color: $main-hightlight;
+		padding-left: 0;
+	}
+}
