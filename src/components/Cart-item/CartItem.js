@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
 
+import { TiDelete } from "react-icons/ti";
+
 import { CartContext } from "../../api/CartContext";
 
 export default function CartItem({ cartItem }) {
@@ -11,11 +13,17 @@ export default function CartItem({ cartItem }) {
 	};
 
 	return (
-		<tr>
-			<td>{cartItem.name}</td>
-			<td>{cartItem.price}</td>
-			<td>
-				<button onClick={handleDeleteCartItem}>x</button>
+		<tr className="product-row">
+			<td className="product-row-img">
+				<img src={cartItem.image} alt={cartItem.name} />
+			</td>
+			<td className="product-row-name">{cartItem.name}</td>
+			<td className="product-row-price">{cartItem.price} €</td>
+			<td className="product-row-remove">
+				<TiDelete
+					className="product-row-remove-btn"
+					onClick={handleDeleteCartItem}
+				/>
 			</td>
 		</tr>
 	);

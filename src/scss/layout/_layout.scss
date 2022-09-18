@@ -7,6 +7,11 @@ $alignments: (
 	evenly: space-evenly,
 );
 
+@mixin flex-wrap {
+	flex-wrap: wrap;
+	gap: 2rem;
+}
+
 .d-flex {
 	display: flex;
 }
@@ -18,9 +23,4 @@ $alignments: (
 	.align-items-#{$key} {
 		align-items: $value;
 	}
-}
-
-@mixin flex-block {
-	display: flex;
-	flex-wrap: wrap;
 }

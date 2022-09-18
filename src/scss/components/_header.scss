@@ -1,8 +1,16 @@
 .menu {
 	padding: 2rem 4rem;
 
+	.menu-logo {
+		flex: 1;
+		font-size: 5rem;
+		color: $main-hightlight;
+		padding-left: 0;
+	}
+
 	a {
 		color: $main-c;
+		position: relative;
 		padding: 0 1.5rem;
 		text-transform: uppercase;
 
@@ -12,13 +20,24 @@
 
 		&:hover {
 			color: $main-hightlight;
+
+			.menu-cart-number {
+				color: #fff;
+			}
 		}
 	}
 
-	.menu-logo {
-		flex: 1;
-		font-size: 2rem;
-		color: $main-hightlight;
-		padding-left: 0;
+	.menu-cart-number {
+		position: absolute;
+		left: 100%;
+		bottom: calc(100% - 0.5rem);
+		background: #e3ae01;
+		width: 1.25rem;
+		height: 1.25rem;
+		font-size: 0.75rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 50%;
 	}
 }

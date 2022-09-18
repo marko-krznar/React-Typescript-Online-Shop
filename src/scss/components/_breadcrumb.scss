@@ -1,3 +1,7 @@
-.breadcrumb {
-	width: 100%;
+.breadcrumb-wrapper {
+	margin-bottom: 2rem;
+
+	.breadcrumb-wrapper-text {
+		margin-left: 1rem;
+	}
 }

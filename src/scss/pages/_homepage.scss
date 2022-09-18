@@ -1,77 +1,17 @@
-.sidebar {
-  width: 100%;
-  max-width: 360px;
-  background: #fff;
-  border-radius: 1rem;
-  overflow: hidden;
-  &.sidebar--cart {
-    .col--remove {
-      top: -0.5rem;
-      right: -0.7rem;
-      opacity: 0.4;
-    }
-    .cart__item--qty {
-      max-width: 88px;
-      width: 100%;
-      span {
-        min-width: 2rem;
-      }
-    }
-    .cart__item--price {
-      max-width: 72px;
-      width: 100%;
-    }
-    .cart__item--name {
-      width: 100%;
-      max-width: calc(100% - 160px);
-    }
-  }
-}
-img {
-  width: 100%;
+.home-illustration {
+	min-width: 20rem;
+	font-size: 20rem;
 }
 
-// Resolution laptop 1680px
-@media (max-width: 1680px) {
-  .sidebar.sidebar--cart {
-    max-width: 440px;
-    .cart__item--qty {
-      max-width: 100px;
-    }
-    .cart__item--price {
-      max-width: 88px;
-    }
-    .cart__item--name {
-      max-width: calc(100% - 188px);
-    }
-    form {
-      input {
-        width: 100%;
-        max-width: calc(100% - 124px);
-      }
-    }
-  }
+.homepage-wrapper {
+	background: no-repeat right/50% url("/images/batman-bcg.webp");
+	height: calc(100vh - 9.75rem);
 }
 
-// Resolution laptop 1200px
-@media (max-width: 1200px) {
-  .sidebar.sidebar--cart {
-    max-width: 100%;
-    margin-top: 2rem;
-  }
-}
+.home-info {
+	flex-basis: 50%;
 
-// Resolution mobile 576px
-@media (max-width: 576px) {
-  .sidebar.sidebar--cart {
-    .cart__item--name {
-      padding-right: 12px;
-    }
-    .cart--total,
-    .cart--coupon {
-      .col-sm {
-        width: 50%;
-      }
-    }
-  }
+	> p {
+		max-width: 30rem;
+	}
 }

@@ -1,6 +1,10 @@
 @import "resetDefault";
 @import "font";
 
+* {
+	box-sizing: border-box;
+}
+
 body {
 	line-height: 1;
 	background: $main-bc;
@@ -9,4 +13,9 @@ body {
 
 .page-wrapper {
 	padding: 0 4rem;
+}
+
+img {
+	max-width: 100%;
+	display: block;
 }
