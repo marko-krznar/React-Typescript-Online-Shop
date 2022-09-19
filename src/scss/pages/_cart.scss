@@ -69,4 +69,13 @@
 			width: 100%;
 		}
 	}
+
+	.product-row-total {
+		font-weight: bold;
+		border-top: 1px solid;
+
+		td {
+			padding-top: 1rem;
+		}
+	}
 }
