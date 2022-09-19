@@ -56,17 +56,50 @@
 
 		.summary-table {
 			width: 100%;
+		}
 
-			.product-row {
-				.product-row-name {
-					padding: 0 1rem 1rem 0;
-				}
+		.product-row {
+			td {
+				padding: 0 1rem 1rem 0;
 			}
 		}
 
-		.btn.cart-summary-checkout-btn {
-			margin-bottom: 0;
+		td.product-row-price {
+			padding-right: 0;
+			text-align: right;
+		}
+
+		.summary-total-table {
 			width: 100%;
+			margin-top: 1rem;
+		}
+
+		.btn.cart-summary-checkout-btn {
+			margin-top: 2rem;
+			width: 100%;
+			margin-bottom: 0;
+		}
+	}
+
+	.product-row-total {
+		font-weight: bold;
+		border-top: 1px solid;
+
+		td {
+			padding-top: 2rem;
+		}
+	}
+
+	.product-row-discount,
+	.product-row-discount-price {
+		td {
+			padding-top: 1rem;
+		}
+	}
+
+	.product-row-discount-price {
+		td {
+			font-weight: bold;
 		}
 	}
 }

@@ -1,7 +1,7 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 
 import { Link } from "react-router-dom";
-import { BsArrowLeft } from "react-icons/bs";
+import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 
 import CartItem from "../../components/Cart-item/CartItem";
 import { CartContext } from "../../api/CartContext";
@@ -10,12 +10,22 @@ import SummaryItem from "../../components/Summary-item/SummaryItem";
 export default function Cart() {
 	const [cart, setCart] = useContext(CartContext);
 
+	const [coupon, setCoupon] = useState({
+		couponName: "total30",
+		discount: null,
+		discountPrice: null,
+	});
+
 	// const handleCheckout = () => {
 	// 	alert("Checkout");
 	// };
 
 	const handleClearAll = () => {
 		setCart([]);
+	};
+
+	const handleCouponName = (event) => {
+		setCoupon(event.target.value);
 	};
 
 	const renderButtonClearAll = () => {
@@ -27,6 +37,41 @@ export default function Cart() {
 				>
 					Clear All
 				</button>
+			);
+		}
+	};
+
+	const renderTotal = cart.reduce((total, item) => {
+		return total + item.price;
+	}, 0);
+
+	const handleCoupon = () => {
+		if (coupon.couponName === "total30") {
+			setCoupon({
+				...coupon,
+				discount: renderTotal * 0.3,
+				discountPrice: renderTotal - coupon.discount,
+			});
+		}
+	};
+
+	const renderDiscount = () => {
+		if (coupon.discount !== null || coupon.discountPrice) {
+			return (
+				<>
+					<tr className="product-row-discount">
+						<td className="product-row-name">Discount</td>
+						<td className="product-row-price">
+							- {coupon.discount} €
+						</td>
+					</tr>
+					<tr className="product-row-discount-price">
+						<td className="product-row-name">Discounted price</td>
+						<td className="product-row-price">
+							{coupon.discountPrice} €
+						</td>
+					</tr>
+				</>
 			);
 		}
 	};
@@ -63,6 +108,18 @@ export default function Cart() {
 								))}
 							</tbody>
 						</table>
+						<table className="summary-total-table">
+							<tbody>
+								<tr className="product-row-total">
+									<td className="product-row-name">Total</td>
+									<td className="product-row-price">
+										{renderTotal} €
+									</td>
+								</tr>
+								{renderDiscount()}
+							</tbody>
+						</table>
+
 						<button
 							className="btn cart-summary-checkout-btn"
 							// onClick={handleCheckout}
@@ -83,32 +140,6 @@ export default function Cart() {
 			</div>
 		);
 	};
-	// 			<table className="summary-table">
-	// 				<tbody>
-	// 					{cart.map((summaryItem, index) => (
-	// 						<SummaryItem
-	// 							key={index}
-	// 							summaryItem={summaryItem}
-	// 						/>
-	// 					))}
-	// 				</tbody>
-	// 			</table>
-	// 		);
-	// 	}
-	// };
-
-	// const renderButtonCheckout = () => {
-	// 	if (cart.length > 0) {
-	// 		return (
-	// 			<button
-	// 				className="btn cart-summary-checkout-btn"
-	// 				onClick={handleCheckout}
-	// 			>
-	// 				Checkout
-	// 			</button>
-	// 		);
-	// 	}
-	// };
 
 	return (
 		<main className="page-wrapper cart-page-wrapper">
@@ -119,6 +150,17 @@ export default function Cart() {
 						Back to products
 					</span>
 				</Link>
+			</section>
+			<section className="cart-coupon-wrapper">
+				<input
+					type="text"
+					placeholder="Use coupon..."
+					onChange={handleCouponName}
+					value={coupon.couponName}
+				/>
+				<button className="btn" onClick={handleCoupon}>
+					<BsArrowRight />
+				</button>
 			</section>
 			<section className="cart-wrapper d-flex align-items-start justify-content-center">
 				{renderCart()}
