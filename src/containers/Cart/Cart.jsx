@@ -16,6 +16,17 @@ export default function Cart() {
 		discountPrice: null,
 	});
 
+	const couponCodes = [
+		{
+			couponCodeName: "PROMO15",
+			couponCodeDiscount: 15,
+		},
+		{
+			couponCodeName: "PROMO25",
+			couponCodeDiscount: 25,
+		},
+	];
+
 	// const handleCheckout = () => {
 	// 	alert("Checkout");
 	// };
@@ -46,7 +57,9 @@ export default function Cart() {
 	}, 0);
 
 	const handleCoupon = () => {
-		if (coupon.couponName === "total30") {
+		let formatCouponInput = coupon.couponName.toUpperCase();
+
+		if (formatCouponInput === "PROMO30") {
 			setCoupon({
 				...coupon,
 				discount: renderTotal * 0.3,
@@ -82,10 +95,37 @@ export default function Cart() {
 		}
 	};
 
+	const renderCartMessage = () => {
+		let formatCouponInput = coupon.couponName.toUpperCase();
+
+		if (formatCouponInput === "PROMO30") {
+			return <span>Succes</span>;
+		} else {
+			return <span>Failure</span>;
+		}
+	};
+
 	const renderCart = () => {
 		if (cart.length > 0) {
 			return (
 				<>
+					<div className="cart-coupon-wrapper d-flex justify-content-center">
+						<input
+							type="text"
+							placeholder="Use coupon..."
+							onChange={handleCouponName}
+							value={coupon.couponName}
+						/>
+						<button
+							className="btn cart-coupon-btn"
+							onClick={handleCoupon}
+						>
+							<BsArrowRight />
+						</button>
+						<div className="cart-coupon-message">
+							{renderCartMessage()}
+						</div>
+					</div>
 					<div className="cart-products-wrapper">
 						<table className="product-table">
 							<thead>
@@ -160,18 +200,8 @@ export default function Cart() {
 					</span>
 				</Link>
 			</section>
-			<section className="cart-coupon-wrapper d-flex justify-content-center">
-				<input
-					type="text"
-					placeholder="Use coupon..."
-					onChange={handleCouponName}
-					value={coupon.couponName}
-				/>
-				<button className="btn cart-coupon-btn" onClick={handleCoupon}>
-					<BsArrowRight />
-				</button>
-			</section>
-			<section className="cart-wrapper d-flex align-items-start justify-content-center">
+
+			<section className="cart-wrapper d-flex align-items-start justify-content-center flex-wrap">
 				{renderCart()}
 			</section>
 		</main>
