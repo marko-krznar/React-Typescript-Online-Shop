@@ -11,7 +11,7 @@ export default function Cart() {
 	const [cart, setCart] = useContext(CartContext);
 
 	const [coupon, setCoupon] = useState({
-		couponName: "total30",
+		couponName: "",
 		discount: null,
 		discountPrice: null,
 	});
@@ -25,7 +25,7 @@ export default function Cart() {
 	};
 
 	const handleCouponName = (event) => {
-		setCoupon(event.target.value);
+		setCoupon({ ...coupon, couponName: event.target.value });
 	};
 
 	const renderButtonClearAll = () => {
@@ -50,7 +50,13 @@ export default function Cart() {
 			setCoupon({
 				...coupon,
 				discount: renderTotal * 0.3,
-				discountPrice: renderTotal - coupon.discount,
+				discountPrice: renderTotal - renderTotal * 0.3,
+			});
+		} else {
+			setCoupon({
+				couponName: "",
+				discount: null,
+				discountPrice: null,
 			});
 		}
 	};
@@ -91,7 +97,11 @@ export default function Cart() {
 							</thead>
 							<tbody>
 								{cart.map((cartItem, index) => (
-									<CartItem key={index} cartItem={cartItem} />
+									<CartItem
+										key={index}
+										cartItem={cartItem}
+										setCoupon={setCoupon}
+									/>
 								))}
 							</tbody>
 						</table>
@@ -119,7 +129,6 @@ export default function Cart() {
 								{renderDiscount()}
 							</tbody>
 						</table>
-
 						<button
 							className="btn cart-summary-checkout-btn"
 							// onClick={handleCheckout}
@@ -151,14 +160,14 @@ export default function Cart() {
 					</span>
 				</Link>
 			</section>
-			<section className="cart-coupon-wrapper">
+			<section className="cart-coupon-wrapper d-flex justify-content-center">
 				<input
 					type="text"
 					placeholder="Use coupon..."
 					onChange={handleCouponName}
 					value={coupon.couponName}
 				/>
-				<button className="btn" onClick={handleCoupon}>
+				<button className="btn cart-coupon-btn" onClick={handleCoupon}>
 					<BsArrowRight />
 				</button>
 			</section>
