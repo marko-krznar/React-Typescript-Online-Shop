@@ -1,15 +1,21 @@
 import React, { useContext } from "react";
+import { useEffect } from "react";
 
 import { TiDelete } from "react-icons/ti";
 
 import { CartContext } from "../../api/CartContext";
 
-export default function CartItem({ cartItem }) {
+export default function CartItem({ cartItem, setCoupon }) {
 	const [cart, setCart] = useContext(CartContext);
 
 	const handleDeleteCartItem = () => {
 		const newCart = cart.filter((prod) => prod.id !== cartItem.id);
 		setCart(newCart);
+		setCoupon({
+			couponName: "total30",
+			discount: null,
+			discountPrice: null,
+		});
 	};
 
 	return (
