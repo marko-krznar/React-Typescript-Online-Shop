@@ -99,9 +99,9 @@ export default function Cart() {
 		let formatCouponInput = coupon.couponName.toUpperCase();
 
 		if (formatCouponInput === "PROMO30") {
-			return <span>Succes</span>;
+			return <span className="">Succes</span>;
 		} else {
-			return <span>Failure</span>;
+			return <span>Use coupon code PROMO30</span>;
 		}
 	};
 
