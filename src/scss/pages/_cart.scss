@@ -130,3 +130,42 @@
 		}
 	}
 }
+
+@media (max-width: 768px) {
+	.cart-products-wrapper,
+	.product-table {
+		width: 100%;
+	}
+
+	.cart-page-wrapper {
+		padding: 0;
+
+		.breadcrumb-wrapper {
+			padding-left: 1rem;
+			padding-right: 1rem;
+		}
+
+		.cart-summary-wrapper {
+			min-width: unset;
+			width: 100%;
+		}
+
+		.cart-coupon-wrapper {
+			padding: 0 1rem;
+			margin-bottom: 3rem;
+
+			input {
+				flex: 1;
+			}
+		}
+
+		.cart-products-wrapper {
+			overflow: auto;
+			white-space: nowrap;
+		}
+
+		.product-table th {
+			padding: 0 1rem;
+		}
+	}
+}

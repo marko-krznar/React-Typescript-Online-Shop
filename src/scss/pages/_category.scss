@@ -29,3 +29,9 @@
 		}
 	}
 }
+
+@media (max-width: 768px) {
+	.category-wrapper .product-item-wrapper {
+		flex: 1 1 46%;
+	}
+}

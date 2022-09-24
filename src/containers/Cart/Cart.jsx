@@ -156,9 +156,11 @@ export default function Cart() {
 										summaryItem={summaryItem}
 									/>
 								))}
-								<tr class="product-row-total">
-									<td class="product-row-name">Total</td>
-									<td class="product-row-price">1000 €</td>
+								<tr className="product-row-total">
+									<td className="product-row-name">Total</td>
+									<td className="product-row-price">
+										1000 €
+									</td>
 								</tr>
 							</tbody>
 						</table>
