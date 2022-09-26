@@ -25,3 +25,5 @@ This is a plan for now but as I'll work on this project I believe I'll get more 
 
 :point_right:  [Check out the app](https://marko-krznar.github.io/React-Webshop/)
 
+:point_right: <a href="https://marko-krznar.github.io/React-Webshop/" target="_blank">Check out the app</a>
+
