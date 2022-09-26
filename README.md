@@ -24,6 +24,3 @@ This is a cart page with products. Main purpose of this project is exercising an
 This is a plan for now but as I'll work on this project I believe I'll get more ideas which I'll be implementing. If you have any ideas, you are more than welcome to share them with me.
 
 :point_right:  [Check out the app](https://marko-krznar.github.io/React-Webshop/)
-
-:point_right: <a href="https://marko-krznar.github.io/React-Webshop/" target="_blank">Check out the app</a>
-
