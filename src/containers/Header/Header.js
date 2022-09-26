@@ -14,8 +14,8 @@ const Header = () => {
 				<GiBatMask />
 			</Link>
 			<Link to="/">Home</Link>
-			<Link to="/products">Products</Link>
-			<Link to="/cart">
+			<Link to="/React-Webshop/products">Products</Link>
+			<Link to="/React-Webshop/cart">
 				Cart<span className="menu-cart-number">{cart.length}</span>
 			</Link>
 		</nav>

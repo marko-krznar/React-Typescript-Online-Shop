@@ -16,12 +16,15 @@ const App = () => {
 					<Header />
 					<Routes>
 						<Route path="/" element={<Homepage />} />
-						<Route path="/cart" element={<Cart />} />
+						<Route path="/React-Webshop/cart" element={<Cart />} />
 						<Route
-							path={`/product/:productID`}
+							path={`/React-Webshop/product/:productID`}
 							element={<ProductPage />}
 						/>
-						<Route path="/products/*" element={<CategoryPage />} />
+						<Route
+							path="/React-Webshop/products/*"
+							element={<CategoryPage />}
+						/>
 						<Route path="/*" element={<Homepage />} />
 					</Routes>
 				</ProductProvider>

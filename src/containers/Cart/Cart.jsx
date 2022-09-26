@@ -156,12 +156,6 @@ export default function Cart() {
 										summaryItem={summaryItem}
 									/>
 								))}
-								<tr className="product-row-total">
-									<td className="product-row-name">Total</td>
-									<td className="product-row-price">
-										1000 €
-									</td>
-								</tr>
 							</tbody>
 						</table>
 						<table className="summary-total-table">
@@ -189,7 +183,7 @@ export default function Cart() {
 		return (
 			<div className="cart-messege-wraper">
 				<h2 className="messege-wraper-headline">No products in cart</h2>
-				<Link className="btn" to={"/products"}>
+				<Link className="btn" to={"/React-Webshop/products"}>
 					Go to products
 				</Link>
 			</div>
@@ -199,7 +193,10 @@ export default function Cart() {
 	return (
 		<main className="page-wrapper cart-page-wrapper">
 			<section className="breadcrumb-wrapper">
-				<Link className="d-flex align-items-center" to={"/products"}>
+				<Link
+					className="d-flex align-items-center"
+					to={"/React-Webshop/products"}
+				>
 					<BsArrowLeft />
 					<span className="breadcrumb-wrapper-text">
 						Back to products

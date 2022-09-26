@@ -20,7 +20,7 @@ export default function ProductItem({ product }) {
 					</div>
 					<div className="product-item-add-to-cart">
 						<Link
-							to={`/product/${product.slug}`}
+							to={`/React-Webshop/product/${product.slug}`}
 							state={product}
 							className="btn"
 						>

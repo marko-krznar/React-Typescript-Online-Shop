@@ -19,7 +19,10 @@ export const ProductPage = () => {
 	return (
 		<main className="page-wrapper product-wrapper">
 			<section className="breadcrumb-wrapper">
-				<Link className="d-flex align-items-center" to={"/products"}>
+				<Link
+					className="d-flex align-items-center"
+					to={"/React-Webshop/products"}
+				>
 					<BsArrowLeft />
 					<span className="breadcrumb-wrapper-text">
 						Back to products

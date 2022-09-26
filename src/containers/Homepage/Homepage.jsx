@@ -12,7 +12,7 @@ const Homepage = () => {
 					This is a test site made for learning. For using coupon
 					write in field PROMO30. It will reduce total for 30%.
 				</p>
-				<Link className="btn" to="/products">
+				<Link className="btn" to="/React-Webshop/products">
 					Products
 				</Link>
 			</div>
