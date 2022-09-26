@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/React-Webshop/static/css/main.eb1420ec.css",
-    "main.js": "/React-Webshop/static/js/main.8c821a07.js",
+    "main.js": "/React-Webshop/static/js/main.f8e18002.js",
     "static/media/batman-bcg.webp": "/React-Webshop/static/media/batman-bcg.b6d092985367452e2801.webp",
     "static/media/bag.jpg": "/React-Webshop/static/media/bag.60c6ae54c0c54c385fea.jpg",
     "static/media/plant.jpg": "/React-Webshop/static/media/plant.a0712536d465c8528567.jpg",
@@ -9,10 +9,10 @@
     "static/media/glasses.jpg": "/React-Webshop/static/media/glasses.32145f75181786e2cb02.jpg",
     "index.html": "/React-Webshop/index.html",
     "main.eb1420ec.css.map": "/React-Webshop/static/css/main.eb1420ec.css.map",
-    "main.8c821a07.js.map": "/React-Webshop/static/js/main.8c821a07.js.map"
+    "main.f8e18002.js.map": "/React-Webshop/static/js/main.f8e18002.js.map"
   },
   "entrypoints": [
     "static/css/main.eb1420ec.css",
-    "static/js/main.8c821a07.js"
+    "static/js/main.f8e18002.js"
   ]
 }
