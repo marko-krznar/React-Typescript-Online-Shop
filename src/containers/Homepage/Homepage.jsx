@@ -16,9 +16,6 @@ const Homepage = () => {
 					Products
 				</Link>
 			</div>
-			{/* <div className="home-illustration">
-				<GiBatWing />
-			</div> */}
 		</main>
 	);
 };
