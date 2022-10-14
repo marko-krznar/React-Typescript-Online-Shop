@@ -1,7 +1,7 @@
 @import "../layout/layout";
 
 .category-wrapper {
-	padding-top: 4rem;
+	margin: 4rem 0;
 	@include flex-wrap;
 
 	.product-item-wrapper {
@@ -70,7 +70,6 @@
 		.product-item-see-more {
 			font-size: 0.875rem;
 			margin-top: 1rem;
-			opacity: 0.3;
 			@include transition;
 
 			svg {
@@ -85,8 +84,37 @@
 	}
 }
 
-@media (max-width: 768px) {
-	.category-wrapper .product-item-wrapper {
-		flex: 1 1 46%;
+@media (max-width: 1024px) {
+	.category-wrapper {
+		.product-item-wrapper {
+			flex: 1 1 46%;
+		}
+
+		.product-item-overlay {
+			position: relative;
+			background: transparent;
+			bottom: unset;
+			height: auto;
+			margin-top: 1rem;
+
+			.ws-product-icon {
+				display: none;
+			}
+
+			.product-item-add-to-cart {
+				width: 100%;
+
+				button {
+					display: block;
+					width: 100%;
+					background: #e3ae01;
+					color: #000;
+				}
+			}
+
+			.product-item-see-more a {
+				color: #e3ae00;
+			}
+		}
 	}
 }
