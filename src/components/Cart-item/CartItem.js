@@ -12,7 +12,7 @@ export default function CartItem({ cartItem, setCoupon }) {
 		const newCart = cart.filter((prod) => prod.id !== cartItem.id);
 		setCart(newCart);
 		setCoupon({
-			couponName: "total30",
+			couponName: "",
 			discount: null,
 			discountPrice: null,
 		});
