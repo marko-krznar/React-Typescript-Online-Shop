@@ -44,7 +44,7 @@ export default function Cart() {
 	};
 
 	const renderTotal = cart.reduce((total, item) => {
-		return total + item.price;
+		return total + item.price * item.quantity;
 	}, 0);
 
 	const handleCoupon = () => {
@@ -133,6 +133,7 @@ export default function Cart() {
 							<thead>
 								<tr>
 									<th colSpan={2}>Product</th>
+									<th>Quantity</th>
 									<th>Price</th>
 									<th>{renderButtonClearAll()}</th>
 								</tr>

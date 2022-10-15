@@ -36,7 +36,10 @@ export default function CartItem({ cartItem, setCoupon }) {
 					{cartItem.name}
 				</Link>
 			</td>
-			<td className="product-row-price">{cartItem.price} €</td>
+			<td className="product-row-quantity">{cartItem.quantity}</td>
+			<td className="product-row-price">
+				{cartItem.price * cartItem.quantity} €
+			</td>
 			<td className="product-row-remove">
 				<button onClick={handleDeleteCartItem}>
 					<TiDelete className="product-row-remove-btn" />
