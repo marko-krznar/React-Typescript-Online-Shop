@@ -13,8 +13,21 @@ export default function ProductItem({ product }) {
 		const productExist = cart.find(
 			(cartItem) => cartItem.id === product.id
 		);
-		if (productExist) return;
-		setCart([product, ...cart]);
+
+		if (productExist) {
+			setCart(
+				cart.map((cartItem) =>
+					cartItem.id === product.id
+						? {
+								...productExist,
+								quantity: productExist.quantity + 1,
+						  }
+						: cartItem
+				)
+			);
+		} else {
+			setCart([...cart, { ...product, quantity: 1 }]);
+		}
 	};
 
 	return (
