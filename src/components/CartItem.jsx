@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { TiDelete } from "react-icons/ti";
 
-import { CartContext } from "../../api/CartContext";
+import { CartContext } from "../local/CartContext";
 
 export default function CartItem({ cartItem, setCoupon }) {
 	const [cart, setCart] = useContext(CartContext);

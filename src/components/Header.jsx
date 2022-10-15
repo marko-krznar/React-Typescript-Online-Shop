@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { GiBatMask } from "react-icons/gi";
 
-import { CartContext } from "../../api/CartContext";
+import { CartContext } from "../local/CartContext";
 
 const Header = () => {
 	const [cart] = useContext(CartContext);

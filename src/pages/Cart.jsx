@@ -3,9 +3,9 @@ import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 
-import CartItem from "../../components/Cart-item/CartItem";
-import { CartContext } from "../../api/CartContext";
-import SummaryItem from "../../components/Summary-item/SummaryItem";
+import CartItem from "../components/CartItem";
+import { CartContext } from "../local/CartContext";
+import SummaryItem from "../components/SummaryItem";
 
 export default function Cart() {
 	const [cart, setCart] = useContext(CartContext);

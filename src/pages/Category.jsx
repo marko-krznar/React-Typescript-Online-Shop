@@ -1,5 +1,5 @@
-import ProductItem from "../../components/Product-item/ProductItem";
-import { ProductContext } from "../../api/ProductContext";
+import ProductItem from "../components/ProductItem";
+import { ProductContext } from "../local/ProductContext";
 import React, { useContext } from "react";
 
 export default function CategoryPage() {

@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { BsArrowLeft } from "react-icons/bs";
 
-import { CartContext } from "../../api/CartContext";
+import { CartContext } from "../local/CartContext";
 
 export const ProductPage = () => {
 	const [cart, setCart] = useContext(CartContext);

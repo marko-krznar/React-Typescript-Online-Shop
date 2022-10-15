@@ -1,12 +1,13 @@
 import "./scss/style.scss";
-import Homepage from "./containers/Homepage/Homepage";
 import { Route, Routes } from "react-router-dom";
-import Cart from "./containers/Cart/Cart";
-import CategoryPage from "./containers/Category-page/CategoryPage";
-import Header from "./containers/Header/Header";
-import { ProductPage } from "./containers/Product-page/ProductPage";
-import { ProductProvider } from "./api/ProductContext";
-import { CartProvider } from "./api/CartContext";
+
+import { ProductProvider } from "./local/ProductContext";
+import { CartProvider } from "./local/CartContext";
+import Header from "./components/Header";
+import Homepage from "./pages/Home";
+import CategoryPage from "./pages/Category";
+import { ProductPage } from "./pages/Product";
+import Cart from "./pages/Cart";
 
 const App = () => {
 	return (

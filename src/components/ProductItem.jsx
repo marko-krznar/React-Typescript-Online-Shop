@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { GiBatMask } from "react-icons/gi";
 import { BsBoxArrowRight } from "react-icons/bs";
 
-import { CartContext } from "../../api/CartContext";
+import { CartContext } from "../local/CartContext";
 
 export default function ProductItem({ product }) {
 	const [cart, setCart] = useContext(CartContext);
