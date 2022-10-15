@@ -11,21 +11,12 @@ export default function Cart() {
 	const [cart, setCart] = useContext(CartContext);
 
 	const [coupon, setCoupon] = useState({
+		active: false,
 		couponName: "",
 		discount: null,
 		discountPrice: null,
+		message: "",
 	});
-
-	const couponCodes = [
-		{
-			couponCodeName: "PROMO15",
-			couponCodeDiscount: 15,
-		},
-		{
-			couponCodeName: "PROMO25",
-			couponCodeDiscount: 25,
-		},
-	];
 
 	// const handleCheckout = () => {
 	// 	alert("Checkout");
@@ -62,14 +53,26 @@ export default function Cart() {
 		if (formatCouponInput === "PROMO30") {
 			setCoupon({
 				...coupon,
+				active: true,
 				discount: renderTotal * 0.3,
 				discountPrice: renderTotal - renderTotal * 0.3,
+				message: "Succes",
 			});
 		} else {
 			setCoupon({
 				couponName: "",
+				active: true,
 				discount: null,
 				discountPrice: null,
+				message: "Wrong promo code, try again",
+			});
+		}
+
+		if (formatCouponInput.length === 0) {
+			setCoupon({
+				...coupon,
+				active: true,
+				message: "Error, input field is empty",
 			});
 		}
 	};
@@ -95,36 +98,35 @@ export default function Cart() {
 		}
 	};
 
-	const renderCartMessage = () => {
-		let formatCouponInput = coupon.couponName.toUpperCase();
-
-		if (formatCouponInput === "PROMO30") {
-			return <span className="">Succes</span>;
-		} else {
-			return <span>Use coupon code PROMO30</span>;
-		}
-	};
-
 	const renderCart = () => {
 		if (cart.length > 0) {
 			return (
 				<>
 					<div className="cart-coupon-wrapper d-flex justify-content-center">
-						<input
-							type="text"
-							placeholder="Use coupon..."
-							onChange={handleCouponName}
-							value={coupon.couponName}
-						/>
-						<button
-							className="btn cart-coupon-btn"
-							onClick={handleCoupon}
-						>
-							<BsArrowRight />
-						</button>
 						<div className="cart-coupon-message">
-							{renderCartMessage()}
+							<span>Use coupon code PROMO30</span>
 						</div>
+						<div className="coupon-form d-flex">
+							<input
+								type="text"
+								placeholder="Use coupon..."
+								onChange={handleCouponName}
+								value={coupon.couponName}
+							/>
+							<button
+								className="btn cart-coupon-btn"
+								onClick={handleCoupon}
+							>
+								<BsArrowRight />
+							</button>
+						</div>
+						{coupon.active === true ? (
+							<span className="coupon-message">
+								{coupon.message}
+							</span>
+						) : (
+							""
+						)}
 					</div>
 					<div className="cart-products-wrapper">
 						<table className="product-table">
