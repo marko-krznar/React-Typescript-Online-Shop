@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import { TiDelete } from "react-icons/ti";
 
@@ -21,15 +21,26 @@ export default function CartItem({ cartItem, setCoupon }) {
 	return (
 		<tr className="product-row">
 			<td className="product-row-img">
-				<img src={cartItem.image} alt={cartItem.name} />
+				<Link
+					to={`/React-Webshop/product/${cartItem.slug}`}
+					state={cartItem}
+				>
+					<img src={cartItem.image} alt={cartItem.name} />
+				</Link>
 			</td>
-			<td className="product-row-name">{cartItem.name}</td>
+			<td className="product-row-name">
+				<Link
+					to={`/React-Webshop/product/${cartItem.slug}`}
+					state={cartItem}
+				>
+					{cartItem.name}
+				</Link>
+			</td>
 			<td className="product-row-price">{cartItem.price} €</td>
 			<td className="product-row-remove">
-				<TiDelete
-					className="product-row-remove-btn"
-					onClick={handleDeleteCartItem}
-				/>
+				<button onClick={handleDeleteCartItem}>
+					<TiDelete className="product-row-remove-btn" />
+				</button>
 			</td>
 		</tr>
 	);
