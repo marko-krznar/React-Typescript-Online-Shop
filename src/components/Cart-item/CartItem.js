@@ -38,10 +38,9 @@ export default function CartItem({ cartItem, setCoupon }) {
 			</td>
 			<td className="product-row-price">{cartItem.price} €</td>
 			<td className="product-row-remove">
-				<TiDelete
-					className="product-row-remove-btn"
-					onClick={handleDeleteCartItem}
-				/>
+				<button onClick={handleDeleteCartItem}>
+					<TiDelete className="product-row-remove-btn" />
+				</button>
 			</td>
 		</tr>
 	);

@@ -11,14 +11,18 @@
 
 		.product-row-remove {
 			text-align: center;
-		}
 
-		.product-row-remove-btn {
-			font-size: 2rem;
-			color: $main-hightlight;
-
-			&:hover {
-				cursor: pointer;
+			button {
+				padding: 0;
+				height: auto;
+				width: auto;
+				border: none;
+				font-size: 2rem;
+				line-height: 1;
+				color: $main-hightlight;
+				display: flex;
+				margin: auto;
+				background: transparent;
 			}
 		}
 	}
