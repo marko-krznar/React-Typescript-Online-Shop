@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { TiDelete } from "react-icons/ti";
 
 import { CartContext } from "../local/CartContext";
-import { useEffect } from "react";
 
 export default function CartItem({ cartItem, setCoupon }) {
 	const [cart, setCart] = useContext(CartContext);
@@ -59,8 +58,6 @@ export default function CartItem({ cartItem, setCoupon }) {
 			);
 		}
 	};
-
-	// useEffect(() => {}, [cartProduct.quantity]);
 
 	return (
 		<tr className="product-row">
