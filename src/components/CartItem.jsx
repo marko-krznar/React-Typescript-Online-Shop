@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { TiDelete } from "react-icons/ti";
 
 import { CartContext } from "../local/CartContext";
+import { useEffect } from "react";
 
 export default function CartItem({ cartItem, setCoupon }) {
 	const [cart, setCart] = useContext(CartContext);
@@ -17,6 +18,49 @@ export default function CartItem({ cartItem, setCoupon }) {
 			discountPrice: null,
 		});
 	};
+
+	const decreaseQuantity = (cartItem) => {
+		const cartProduct = cart.find((product) => product.id === cartItem.id);
+
+		if (cartProduct) {
+			setCart(
+				cart.map((cartItemProduct) =>
+					cartItemProduct.id === cartItem.id
+						? {
+								...cartProduct,
+								quantity: cartProduct.quantity - 1,
+						  }
+						: cartItemProduct
+				)
+			);
+		}
+
+		if (cartProduct.quantity === 0) {
+			const newCart = cart.filter(
+				(product) => product.id !== cartProduct.id
+			);
+			setCart(newCart);
+		}
+	};
+
+	const increaseQuantity = (cartItem) => {
+		const cartProduct = cart.find((product) => product.id === cartItem.id);
+
+		if (cartProduct) {
+			setCart(
+				cart.map((cartItemProduct) =>
+					cartItemProduct.id === cartItem.id
+						? {
+								...cartProduct,
+								quantity: cartProduct.quantity + 1,
+						  }
+						: cartItemProduct
+				)
+			);
+		}
+	};
+
+	// useEffect(() => {}, [cartProduct.quantity]);
 
 	return (
 		<tr className="product-row">
@@ -36,7 +80,11 @@ export default function CartItem({ cartItem, setCoupon }) {
 					{cartItem.name}
 				</Link>
 			</td>
-			<td className="product-row-quantity">{cartItem.quantity}</td>
+			<td className="product-row-quantity">
+				<button onClick={() => decreaseQuantity(cartItem)}>-</button>
+				<span>{cartItem.quantity}</span>
+				<button onClick={() => increaseQuantity(cartItem)}>+</button>
+			</td>
 			<td className="product-row-price">
 				{cartItem.price * cartItem.quantity} €
 			</td>
