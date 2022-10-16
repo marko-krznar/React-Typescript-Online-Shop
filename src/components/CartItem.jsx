@@ -35,7 +35,7 @@ export default function CartItem({ cartItem, setCoupon }) {
 			);
 		}
 
-		if (cartProduct.quantity === 0) {
+		if (cartProduct.quantity === 1) {
 			const newCart = cart.filter(
 				(product) => product.id !== cartProduct.id
 			);
