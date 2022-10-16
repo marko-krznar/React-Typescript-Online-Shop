@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/React-Webshop/static/css/main.3f878510.css",
-    "main.js": "/React-Webshop/static/js/main.b90ec2e1.js",
+    "main.css": "/React-Webshop/static/css/main.18de39e8.css",
+    "main.js": "/React-Webshop/static/js/main.5ed6dd47.js",
     "static/media/batman-bcg.webp": "/React-Webshop/static/media/batman-bcg.b6d092985367452e2801.webp",
     "static/media/bag.jpg": "/React-Webshop/static/media/bag.60c6ae54c0c54c385fea.jpg",
     "static/media/plant.jpg": "/React-Webshop/static/media/plant.a0712536d465c8528567.jpg",
     "static/media/watch.jpg": "/React-Webshop/static/media/watch.3d4065ef8928491a67b7.jpg",
     "static/media/glasses.jpg": "/React-Webshop/static/media/glasses.32145f75181786e2cb02.jpg",
     "index.html": "/React-Webshop/index.html",
-    "main.3f878510.css.map": "/React-Webshop/static/css/main.3f878510.css.map",
-    "main.b90ec2e1.js.map": "/React-Webshop/static/js/main.b90ec2e1.js.map"
+    "main.18de39e8.css.map": "/React-Webshop/static/css/main.18de39e8.css.map",
+    "main.5ed6dd47.js.map": "/React-Webshop/static/js/main.5ed6dd47.js.map"
   },
   "entrypoints": [
-    "static/css/main.3f878510.css",
-    "static/js/main.b90ec2e1.js"
+    "static/css/main.18de39e8.css",
+    "static/js/main.5ed6dd47.js"
   ]
 }
