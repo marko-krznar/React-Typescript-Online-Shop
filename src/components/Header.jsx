@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 
 import { Link } from "react-router-dom";
-import { GiBatMask } from "react-icons/gi";
+import { GiBatMask, GiHamburgerMenu } from "react-icons/gi";
 
 import { CartContext } from "../local/CartContext";
 
@@ -15,15 +15,23 @@ const Header = () => {
 					<GiBatMask />
 				</Link>
 			</div>
-			<Link className="menu-item" to="/">
-				Home
-			</Link>
-			<Link className="menu-item" to="/React-Webshop/products">
-				Products
-			</Link>
-			<Link className="menu-item" to="/React-Webshop/cart">
-				Cart<span className="menu-cart-number">{cart.length}</span>
-			</Link>
+			<ul className="menu-list d-flex">
+				<li className="menu-item">
+					<Link to="/">Home</Link>
+				</li>
+				<li className="menu-item">
+					<Link to="/React-Webshop/products">Products</Link>
+				</li>
+				<li className="menu-item">
+					<Link to="/React-Webshop/cart">
+						Cart
+						<span className="menu-cart-number">{cart.length}</span>
+					</Link>
+				</li>
+			</ul>
+			<div className="menu-hamburger">
+				<GiHamburgerMenu />
+			</div>
 		</nav>
 	);
 };

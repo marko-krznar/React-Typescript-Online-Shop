@@ -13,23 +13,25 @@
 		padding-left: 0;
 	}
 
-	a {
-		color: $main-c;
-		position: relative;
-		padding: 0 1.5rem;
-		text-transform: uppercase;
-
-		&.menu-item {
+	.menu-list {
+		.menu-item {
+			position: relative;
+			padding: 0 1.5rem;
+			text-transform: uppercase;
 			padding-top: 1rem;
 			padding-bottom: 1rem;
-		}
 
-		&:last-child {
-			padding-right: 0;
-		}
+			a {
+				color: $main-c;
 
-		&:hover {
-			color: $main-hightlight;
+				&:hover {
+					color: $main-hightlight;
+				}
+			}
+
+			&:last-child {
+				padding-right: 0;
+			}
 
 			.menu-cart-number {
 				color: #fff;
@@ -63,9 +65,9 @@
 		flex-wrap: wrap;
 		justify-content: center !important;
 
-		a {
-			padding: 0 1.5rem 0 0;
-		}
+		// a {
+		// 	padding: 0 1.5rem 0 0;
+		// }
 
 		.menu-logo {
 			flex: 1 0 100%;
