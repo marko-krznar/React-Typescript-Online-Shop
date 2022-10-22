@@ -77,12 +77,12 @@ export const ProductPage = () => {
 						<span>{productQuantity}</span>
 						<button onClick={increaseQuantity}>+</button>
 					</div>
-					<a
+					<button
 						className="btn product-wrapper-summary-info-btn"
 						onClick={() => handleAddToCart(location.state)}
 					>
 						Add to cart
-					</a>
+					</button>
 				</div>
 			</section>
 		</main>
