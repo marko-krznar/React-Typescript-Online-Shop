@@ -47,7 +47,9 @@ export default function Cart() {
 		return total + item.price * item.quantity;
 	}, 0);
 
-	const handleCoupon = () => {
+	const handleCoupon = (event) => {
+		event.preventDefault();
+
 		let formatCouponInput = coupon.couponName.toUpperCase();
 
 		if (formatCouponInput === "PROMO30") {
@@ -72,6 +74,8 @@ export default function Cart() {
 			setCoupon({
 				...coupon,
 				active: true,
+				discount: null,
+				discountPrice: null,
 				message: "Error, input field is empty",
 			});
 		}
@@ -106,20 +110,20 @@ export default function Cart() {
 						<div className="cart-coupon-message">
 							<span>Use coupon code PROMO30</span>
 						</div>
-						<div className="coupon-form d-flex">
+						<form
+							className="coupon-form d-flex"
+							onSubmit={handleCoupon}
+						>
 							<input
 								type="text"
 								placeholder="Use coupon..."
 								onChange={handleCouponName}
 								value={coupon.couponName}
 							/>
-							<button
-								className="btn cart-coupon-btn"
-								onClick={handleCoupon}
-							>
+							<button className="btn cart-coupon-btn">
 								<BsArrowRight />
 							</button>
-						</div>
+						</form>
 						{coupon.active === true ? (
 							<span className="coupon-message">
 								{coupon.message}
