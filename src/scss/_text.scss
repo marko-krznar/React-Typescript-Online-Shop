@@ -1,0 +1,16 @@
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+h2.heading {
+	font-size: 2rem;
+	font-weight: $font-weight-bold;
+}
+
+.description {
+	color: $gray-medium-1;
+}
+
+.price {
+	font-size: 1rem;
+	font-weight: $font-weight-bold;
+}

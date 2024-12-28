@@ -1,0 +1,25 @@
+.container {
+	max-width: 1440px;
+	padding: 0 2rem;
+	margin: auto;
+}
+
+.ant-layout-header {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0;
+
+	.ant-menu {
+		flex: 1;
+		justify-content: flex-end;
+	}
+}
+
+.products-list {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1rem;
+	padding: 2rem 0;
+}
