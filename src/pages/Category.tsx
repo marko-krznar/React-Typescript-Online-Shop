@@ -12,6 +12,7 @@ function Category() {
 		<div className="products-list">
 			{categoryProducts?.map((product: Product) => (
 				<ProductCard
+					key={product.id}
 					id={product.id}
 					title={product.title}
 					image={product.image}

@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import { Route, Routes } from "react-router";
 import Category from "./pages/Category";
 import Cart from "./pages/Cart";
+import Product from "./pages/Product";
 
 function App() {
 	return (
@@ -33,6 +34,10 @@ function App() {
 							element={<Category />}
 						/>
 						<Route path="/cart" element={<Cart />} />
+						<Route
+							path="/products/:productId"
+							element={<Product />}
+						/>
 					</Routes>
 				</Content>
 				<Footer>footer</Footer>

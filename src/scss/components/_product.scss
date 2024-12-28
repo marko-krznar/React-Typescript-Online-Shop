@@ -1,0 +1,23 @@
+.product-detail-wrapper {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	gap: 2rem;
+	padding: 2rem 0;
+
+	.product-detail-gallery-wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.product-detail-content-wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 1rem;
+
+		.ant-tag {
+			text-transform: capitalize;
+		}
+	}
+}

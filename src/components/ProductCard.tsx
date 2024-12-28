@@ -1,9 +1,14 @@
 import { Card, Flex, Button } from "antd";
 import Meta from "antd/es/card/Meta";
 
-import { renderPrice } from "../utils/helpers";
-import { addProduct } from "../redux/shop/cart";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router";
+import { AppDispatch } from "../redux/store";
+
+import { addProduct } from "../redux/shop/cart";
+import { fetchProduct } from "../redux/shop/active-product";
+
+import { renderPrice } from "../utils/helpers";
 
 export interface Product {
 	id: number;
@@ -14,7 +19,8 @@ export interface Product {
 }
 
 function ProductCard({ id, title, image, description, price }: Product) {
-	const dispatch = useDispatch();
+	const dispatch = useDispatch<AppDispatch>();
+	const navigate = useNavigate();
 
 	const productForCart = {
 		id: id,
@@ -41,7 +47,14 @@ function ProductCard({ id, title, image, description, price }: Product) {
 					>
 						Add To Cart
 					</Button>
-					<Button>Details</Button>
+					<Button
+						onClick={() => {
+							dispatch(fetchProduct(id));
+							navigate(`/products/${id}`);
+						}}
+					>
+						Details
+					</Button>
 				</Flex>
 			</div>
 		</Card>

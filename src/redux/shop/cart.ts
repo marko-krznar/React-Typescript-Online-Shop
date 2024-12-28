@@ -30,7 +30,7 @@ const cart = createSlice({
 			if (existingProduct) {
 				existingProduct.quantity += product.quantity;
 			} else {
-				state.products.push(product);
+				state.products.push({ ...product, quantity: 1 });
 			}
 		},
 	},
