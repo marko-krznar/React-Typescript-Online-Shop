@@ -33,10 +33,18 @@ const cart = createSlice({
 				state.products.push({ ...product, quantity: 1 });
 			}
 		},
+		removeProduct: (state, action: PayloadAction<CartItem>) => {
+			const product = action.payload;
+			console.log(product);
+
+			state.products = state.products.filter(
+				(existingProduct: CartItem) => existingProduct.id !== product.id
+			);
+		},
 	},
 });
 
-export const { addProduct } = cart.actions;
+export const { addProduct, removeProduct } = cart.actions;
 
 export const cartItemsSelector = (state: any) => state.cart.products;
 
