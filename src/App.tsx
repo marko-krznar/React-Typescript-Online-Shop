@@ -1,14 +1,16 @@
 import "./scss/style.scss";
 
 import { ConfigProvider, Layout } from "antd";
-import { Content, Footer, Header } from "antd/es/layout/layout";
+import { Content, Header } from "antd/es/layout/layout";
 
-import Navigation from "./components/Navigation";
-import Home from "./pages/Home";
 import { Route, Routes } from "react-router";
+
+import Home from "./pages/Home";
 import Category from "./pages/Category";
 import Cart from "./pages/Cart";
 import Product from "./pages/Product";
+import Navigation from "./components/Navigation";
+import FooterElement from "./components/Footer";
 
 function App() {
 	return (
@@ -18,6 +20,8 @@ function App() {
 					Layout: {
 						headerBg: "#fff",
 						bodyBg: "#fff",
+						footerBg: "#fff",
+						footerPadding: "2rem 0",
 					},
 				},
 			}}
@@ -40,7 +44,7 @@ function App() {
 						/>
 					</Routes>
 				</Content>
-				<Footer>footer</Footer>
+				<FooterElement />
 			</Layout>
 		</ConfigProvider>
 	);
