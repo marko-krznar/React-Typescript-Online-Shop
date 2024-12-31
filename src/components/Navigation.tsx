@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import { Button, Menu } from "antd";
-import { NavLink } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 
 type MenuItem = Required<MenuProps>["items"][number];
 
@@ -26,6 +26,7 @@ const items: MenuItem[] = [
 ];
 
 const App: React.FC = () => {
+	const navigate = useNavigate();
 	const [current, setCurrent] = useState("mail");
 
 	const onClick: MenuProps["onClick"] = (e) => {
@@ -34,7 +35,7 @@ const App: React.FC = () => {
 
 	return (
 		<>
-			<Button>Online Shop</Button>
+			<Button onClick={() => navigate("/")}>Online Shop</Button>
 			<Menu
 				onClick={onClick}
 				selectedKeys={[current]}
