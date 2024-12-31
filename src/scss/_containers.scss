@@ -1,7 +1,13 @@
+.ant-layout {
+	min-height: 100vh;
+}
+
 .container {
 	max-width: 1440px;
 	padding: 0 2rem;
 	margin: auto;
+	display: flex;
+	flex-direction: column;
 }
 
 .ant-layout-header {
@@ -22,4 +28,19 @@
 	grid-template-columns: repeat(3, 1fr);
 	gap: 1rem;
 	padding: 2rem 0;
+}
+
+.cart-container {
+	display: flex;
+	align-items: flex-start;
+	gap: 1rem;
+	padding: 2rem 0;
+
+	.ant-table-wrapper {
+		flex: 1;
+	}
+
+	.cart-summary-wrapper {
+		width: 20rem;
+	}
 }

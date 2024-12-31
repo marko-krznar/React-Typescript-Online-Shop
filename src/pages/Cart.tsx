@@ -1,14 +1,16 @@
 import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch } from "../redux/store";
 import { CartItem, cartItemsSelector, removeProduct } from "../redux/shop/cart";
 
 import { Button, Table } from "antd";
 import { DeleteOutlined } from "@ant-design/icons";
 
 import { renderPrice } from "../utils/helpers";
-import { AppDispatch } from "../redux/store";
+import CartSummary from "../components/CartSummary";
 
 function Cart() {
 	const dispatch = useDispatch<AppDispatch>();
+
 	const cartItems = useSelector(cartItemsSelector);
 
 	const columns = [
@@ -56,7 +58,12 @@ function Cart() {
 		),
 	}));
 
-	return <Table dataSource={cartRows} columns={columns} pagination={false} />;
+	return (
+		<div className="cart-container">
+			<Table dataSource={cartRows} columns={columns} pagination={false} />
+			<CartSummary />
+		</div>
+	);
 }
 
 export default Cart;
