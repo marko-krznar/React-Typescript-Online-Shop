@@ -23,11 +23,14 @@ function App() {
 						footerBg: "#fff",
 						footerPadding: "2rem 0",
 					},
+					Typography: {
+						titleMarginBottom: "0",
+					},
 				},
 			}}
 		>
-			<Layout className="container">
-				<Header>
+			<Layout>
+				<Header className="container header-container">
 					<Navigation />
 				</Header>
 				<Content>

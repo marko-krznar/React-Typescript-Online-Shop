@@ -1,25 +1,33 @@
-import { useDispatch, useSelector } from "react-redux";
-import { activeProductSelector } from "../redux/store";
+import { NavLink } from "react-router";
 import { Tag, Image, Button } from "antd";
+import { useDispatch, useSelector } from "react-redux";
+import { activeProductSelector, AppDispatch } from "../redux/store";
+import { addProduct } from "../redux/shop/cart";
 
 import { renderPrice } from "../utils/helpers";
-import { addProduct } from "../redux/shop/cart";
-import { NavLink } from "react-router";
+import { fetchCategoryProducts } from "../redux/shop/category-products";
 
 function Product() {
-	const dispatch = useDispatch();
+	const dispatch = useDispatch<AppDispatch>();
 	const product: any = useSelector(activeProductSelector);
 
 	return (
-		<>
+		<div className="container">
 			{product && (
-				<div className="product-detail-wrapper">
+				<div className="inner-container-wrapper product-detail-wrapper">
 					<div className="product-detail-gallery-wrapper">
 						<Image width={200} src={product.image} />
 					</div>
 					<div className="product-detail-content-wrapper">
 						<Tag>
-							<NavLink to={`/category/${product.category}`}>
+							<NavLink
+								to={`/category/${product.category}`}
+								onClick={() =>
+									dispatch(
+										fetchCategoryProducts(product.category)
+									)
+								}
+							>
 								{product.category}
 							</NavLink>
 						</Tag>
@@ -38,7 +46,7 @@ function Product() {
 					</div>
 				</div>
 			)}
-		</>
+		</div>
 	);
 }
 

@@ -11,23 +11,27 @@ import {
 
 function FooterElement() {
 	const currentDate = new Date();
-	let currentYear = currentDate.getFullYear();
+	const currentYear = currentDate.getFullYear();
 
 	return (
-		<Footer>
-			<Flex justify="space-between">
-				<Flex gap="middle">
-					<TwitterCircleFilled />
-					<LinkedinFilled />
-					<FacebookFilled />
-					<InstagramFilled />
-					<PinterestFilled />
-				</Flex>
-				<Flex gap="small">
-					<AliwangwangFilled /> <span>Webstore</span>
-				</Flex>
-				<p>© {currentYear} Webstore. All rights reserved.</p>
-			</Flex>
+		<Footer className="container">
+			<div className="inner-container-wrapper">
+				<div className="footer-inner-wrapper">
+					<Flex gap="middle">
+						<TwitterCircleFilled />
+						<LinkedinFilled />
+						<FacebookFilled />
+						<InstagramFilled />
+						<PinterestFilled />
+					</Flex>
+					<Flex gap="small" justify="center">
+						<AliwangwangFilled /> <span>Webstore</span>
+					</Flex>
+					<Flex justify="flex-end">
+						© {currentYear} Webstore. All rights reserved.
+					</Flex>
+				</div>
+			</div>
 		</Footer>
 	);
 }

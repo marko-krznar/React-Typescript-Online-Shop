@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router";
 
-import { ShoppingCartOutlined } from "@ant-design/icons";
+import { AliwangwangFilled, ShoppingCartOutlined } from "@ant-design/icons";
 import type { MenuProps } from "antd";
-import { Badge, Button, Menu } from "antd";
+import { Badge, Button, Flex, Menu } from "antd";
 
 import { cartItemsSelector } from "../redux/shop/cart";
 import { useSelector } from "react-redux";
@@ -13,7 +13,6 @@ type MenuItem = Required<MenuProps>["items"][number];
 const App: React.FC = () => {
 	const navigate = useNavigate();
 	const cartItems = useSelector(cartItemsSelector);
-
 	const [current, setCurrent] = useState("mail");
 
 	const items: MenuItem[] = [
@@ -29,7 +28,7 @@ const App: React.FC = () => {
 			key: "cart",
 			icon: (
 				<NavLink to="/cart">
-					<Badge count={cartItems.length}>
+					<Badge showZero count={cartItems.length}>
 						<ShoppingCartOutlined style={{ fontSize: "1.25rem" }} />
 					</Badge>
 				</NavLink>
@@ -42,17 +41,23 @@ const App: React.FC = () => {
 	};
 
 	return (
-		<>
-			<Button type="text" onClick={() => navigate("/")}>
-				Online Shop
-			</Button>
-			<Menu
-				onClick={onClick}
-				selectedKeys={[current]}
-				mode="horizontal"
-				items={items}
-			/>
-		</>
+		<div className="navigation-container">
+			<div className="inner-container-wrapper">
+				<Flex align="center">
+					<Button type="text" onClick={() => navigate("/")}>
+						<Flex gap="small">
+							<AliwangwangFilled /> <span>Webstore</span>
+						</Flex>
+					</Button>
+					<Menu
+						onClick={onClick}
+						selectedKeys={[current]}
+						mode="horizontal"
+						items={items}
+					/>
+				</Flex>
+			</div>
+		</div>
 	);
 };
 

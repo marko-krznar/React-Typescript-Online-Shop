@@ -4,16 +4,15 @@
 @import "./containers";
 @import "./table";
 
-@import "./components/popular-products";
 @import "./components/product-card";
 @import "./components/product";
 
 .intro-section {
 	display: grid;
 	gap: 1rem;
-	min-height: 50vh;
+	min-height: 70vh;
 	grid-template-columns: 1fr 1fr 1fr;
-	padding: 2rem 0;
+	padding: 4rem 0;
 
 	.category-card {
 		height: 100%;
