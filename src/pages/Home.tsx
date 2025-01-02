@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { Flex, Typography } from "antd";
 
 import {
 	AppDispatch,
@@ -13,6 +14,9 @@ import { fetchCategoryProducts } from "../redux/shop/category-products";
 
 import PopularProducts from "../components/PopularProducts";
 import NewProducts from "../components/NewProducts";
+import Title from "antd/es/typography/Title";
+
+const { Text } = Typography;
 
 function Home() {
 	const dispatch = useDispatch<AppDispatch>();
@@ -32,18 +36,51 @@ function Home() {
 		<>
 			<div className="container">
 				<div className="inner-container-wrapper intro-section">
+					<div className="intro-section-element intro-section-element-welcome">
+						<Flex
+							vertical
+							gap="middle"
+							justify="center"
+							className="intro-section-element-welcome-content"
+						>
+							<Title level={1}>Welcome</Title>
+							<Text type="secondary">
+								This project is built to enhance front-end
+								development skills.
+							</Text>
+							<Flex vertical gap="small">
+								<Title level={4}>
+									Tools used for the project:
+								</Title>
+								<ul>
+									<li>
+										<Text type="secondary">React</Text>
+									</li>
+									<li>
+										<Text type="secondary">TypeScript</Text>
+									</li>
+									<li>
+										<Text type="secondary">Redux</Text>
+									</li>
+									<li>
+										<Text type="secondary">Ant Design</Text>
+									</li>
+								</ul>
+							</Flex>
+						</Flex>
+					</div>
 					{categories?.map((category: any) => (
 						<Link
 							to={`category/${category}`}
 							key={category}
-							className="category-card"
+							className="intro-section-element"
 							onClick={() => handleLinkClick(category)}
 						>
 							{/* <LaptopOutlined style={{ fontSize: "48px" }} />
 						<CrownOutlined style={{ fontSize: "48px" }} />
 						<ManOutlined style={{ fontSize: "48px" }} />
 						<WomanOutlined style={{ fontSize: "48px" }} /> */}
-							<span>{category}</span>
+							<Title level={3}>{category}</Title>
 							<span>Shop Now</span>
 						</Link>
 					))}
