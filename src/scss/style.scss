@@ -1,7 +1,75 @@
+@import "./reset";
 @import "./theme";
-@import "./animations";
+@import "./text";
+@import "./containers";
+@import "./table";
 
-@import "./core/core";
-@import "./layout/layout";
-@import "./components/components";
-@import "./pages/pages";
+@import "./components/product-card";
+@import "./components/product";
+
+// TODO refactor this to separate component
+.intro-section {
+	display: grid;
+	gap: 1rem;
+	min-height: 70vh;
+	grid-template-columns: repeat(3, 1fr);
+	padding: 0 0 4rem;
+
+	.intro-section-element {
+		height: 100%;
+		background-color: $gray-light-1;
+		border: 1px solid $gray-light-1;
+		border-radius: 0.5rem;
+		padding: 2rem;
+
+		&:not(.intro-section-element-welcome) {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			gap: 1rem;
+			text-transform: capitalize;
+		}
+	}
+
+	.intro-section-element-welcome {
+		grid-row-start: 1;
+		grid-row-end: 3;
+	}
+}
+
+@media (max-width: $small-laptop) {
+	.intro-section {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(3, 1fr);
+
+		.intro-section-element-welcome {
+			grid-column-start: 1;
+			grid-column-end: 3;
+		}
+	}
+}
+
+@media (max-width: $medium-mobile) {
+	.intro-section {
+		grid-template-columns: 1fr;
+		grid-template-rows: auto;
+		padding: 0 0 2rem;
+
+		.intro-section-element {
+			&.intro-section-element-welcome {
+				grid-column-start: unset;
+				grid-column-end: unset;
+				grid-row-start: unset;
+				grid-row-end: unset;
+			}
+
+			&:not(.intro-section-element-welcome) {
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-end;
+				gap: 1rem;
+				text-transform: capitalize;
+			}
+		}
+	}
+}
