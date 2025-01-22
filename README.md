@@ -1,26 +1,50 @@
-# React - Cart page
+# React - Online Shop
 
-This project is made for learning purposes. This is ongoing project that will have more features.
+This project is designed for **learning purposes** and serves for experimenting with new features, tools, and technologies. It's an **ongoing project**, meaning more features and updates will be added over time.
 
-## Description
+:point_right: [Check out the app](https://marko-krznar.github.io/React-Typescript-Online-Shop)
 
-This is a cart page with products. Main purpose of this project is exercising and extending knowledge in React JS. Besides React JS, I'm using Bootstrap with my own SCSS.
+## Goals of the Project
 
-## Working Features
+-   **Testing New Features:** Explore and implement modern solutions and patterns in software development.
+-   **React Experimentation:** Experiment with new **React versions** and features as they are released.
+-   **Skill Development:** Practice and enhance development skills by integrating various libraries, frameworks, and APIs.
 
--   Add products to cart
--   Coupon PROMO30 - decreases total amout for 30%
+## Project Details
 
-## Features I'll be adding through time
+### Tools
 
--   Product discount - Add discount for certan products through coupon
--   Wishlist
--   Adding product using free API
--   Glass UI
--   Make order complete pop up
--   Make seperate pages for products, cart and checkout using Routing
--   Make light/dark mode
+-   **[Vite](https://vite.dev/):**
+    A fast and modern build tool for blazing-fast development and optimized production builds.
+-   **[Fake Store API](https://fakestoreapi.com):**
+    Leveraged for testing API integration. Currently used to fetch mock data (not related to weather).
+-   **[Redux Toolkit](https://redux-toolkit.js.org/):**
+    Simplifies state management with powerful tools and best practices.
+-   **[Ant Design](https://ant.design/):**
+    Used for creating a modern and user-friendly interface with pre-designed UI components
+-   **[React Router](https://reactrouter.com/):**
+    Enables seamless navigation and routing in the application with declarative components.
 
-This is a plan for now but as I'll work on this project I believe I'll get more ideas which I'll be implementing. If you have any ideas, you are more than welcome to share them with me.
+### Start the Project Locally
 
-:point_right: [Check out the app](https://marko-krznar.github.io/React-Webshop/)
+To get started with the project locally, follow these steps:
+
+1. **Clone the Repository**  
+   Clone this repository to your local machine using:
+
+    ```bash
+    git clone <repository-url>
+    ```
+
+2. **Install Dependencies**  
+   Run the following command to install the required dependencies:
+
+    ```bash
+    npm install
+    ```
+
+3. **Start the Development Server**  
+   After installing the dependencies, start the project by running:
+    ```bash
+    npm run dev
+    ```
