@@ -69,11 +69,12 @@ function Home() {
 							</Flex>
 						</Flex>
 					</div>
-					{categories?.map((category: any) => (
+					{categories?.map((category: any, index: number) => (
 						<Link
 							to={`category/${category}`}
 							key={category}
-							className="intro-section-element"
+							// TODO replace category-name-${index} with a category name as a class name
+							className={`intro-section-element category-name-${index}`}
 							onClick={() => handleLinkClick(category)}
 						>
 							{/* <LaptopOutlined style={{ fontSize: "48px" }} />

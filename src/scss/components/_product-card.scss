@@ -56,3 +56,17 @@
 		justify-content: space-between;
 	}
 }
+
+@media (max-width: $small-laptop) {
+	.ant-card.products-card .products-card-footer {
+		padding-top: 1rem;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 0.5rem;
+
+		> div {
+			width: 100%;
+			justify-content: center;
+		}
+	}
+}

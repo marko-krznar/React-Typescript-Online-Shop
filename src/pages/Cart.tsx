@@ -68,6 +68,7 @@ function Cart() {
 						dataSource={cartRows}
 						columns={columns}
 						pagination={false}
+						className="cart-table"
 					/>
 					<CartSummary />
 				</>
