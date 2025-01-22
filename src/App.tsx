@@ -33,7 +33,7 @@ function App() {
 				<Header className="container header-container">
 					<Navigation />
 				</Header>
-				<Content>
+				<Content className="main-container">
 					<Routes>
 						<Route path="/" element={<Home />} />
 						<Route
