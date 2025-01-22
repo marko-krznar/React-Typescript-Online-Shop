@@ -6,8 +6,9 @@ function PopularProducts({ popularProducts }: any) {
 			<div className="inner-container-wrapper">
 				<h2 className="heading">Popular Products</h2>
 				<p className="description">
-					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea
-					alias beatae aspernatur ex officiis facilis.
+					Discover our Popular Products, from everyday essentials to
+					cutting-edge innovations, these products are crafted to meet
+					your needs.
 				</p>
 				<div className="products-list">
 					{popularProducts?.map((product: Product) => (

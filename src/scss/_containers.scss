@@ -29,7 +29,7 @@
 	&.popular-products-container {
 		background-color: $gray-light-1;
 		padding-top: 4rem;
-		padding-bottom: 3rem;
+		padding-bottom: 4rem;
 
 		.heading,
 		.description {
@@ -37,21 +37,24 @@
 		}
 
 		.description {
-			max-width: 22rem;
+			max-width: 30rem;
 			margin: 1rem auto 2rem;
-		}
-
-		.products-list {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			max-width: 100%;
-			gap: 1rem;
 		}
 	}
 
 	&.new-products-container {
 		padding-top: 4rem;
-		padding-bottom: 3rem;
+		padding-bottom: 4rem;
+
+		.heading,
+		.description {
+			text-align: center;
+		}
+
+		.description {
+			max-width: 30rem;
+			margin: 1rem auto 2rem;
+		}
 	}
 
 	.inner-container-wrapper {
@@ -80,7 +83,6 @@
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 1rem;
-	padding: 4rem 0;
 }
 
 footer.ant-layout-footer {

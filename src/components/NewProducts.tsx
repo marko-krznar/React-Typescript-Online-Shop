@@ -4,7 +4,6 @@ import { AppDispatch, newProductsSelector } from "../redux/store";
 import { fetchNewProducts } from "../redux/shop/new-products";
 
 import ProductCard, { Product } from "./ProductCard";
-import { Flex } from "antd";
 
 function NewProducts() {
 	const newProducts = useSelector(newProductsSelector);
@@ -17,13 +16,11 @@ function NewProducts() {
 	return (
 		<section className="container new-products-container">
 			<div className="inner-container-wrapper">
-				<Flex vertical gap="small" align="center">
-					<h2 className="heading">New Products</h2>
-					<p className="description">
-						Lorem ipsum dolor sit amet consectetur, adipisicing
-						elit. Ea alias beatae aspernatur ex officiis facilis.
-					</p>
-				</Flex>
+				<h2 className="heading">New Products</h2>
+				<p className="description">
+					Explore our New Products, from groundbreaking technology to
+					stylish essentials, our new arrivals are curated to impress.
+				</p>
 				<div className="products-list">
 					{newProducts?.map((product: Product) => (
 						<ProductCard
